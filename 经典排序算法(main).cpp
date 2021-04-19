@@ -13,6 +13,7 @@ int main()
 	int top = 0, low = 0, high, pivot;
 	clock_t diff2, diff4, diff5, diff6, diff7, diff8, diff9, diff10, diff11;
 	clock_t start2, start4, start5, start6, start7, start8, start9, start10, start11;
+	int key[12] = { 0 };
 
 	ofstream outFile;
 
@@ -149,6 +150,7 @@ end:
 			cout << endl;
 			diff2 = clock() - start2;
 			cout << "排序所用的时间为：" << diff2 << " ms" << endl;
+			key[2] = 2;
 			break;
 		case 3://归并排序
 			cout << "归并排序已完成，请合并数组（输入4）" << endl;
@@ -162,6 +164,7 @@ end:
 			cout << endl;
 			diff4 = clock() - start4;
 			cout << "排序所用的时间为：" << diff4 << " ms" << endl;
+			key[4] = 4;
 			break;
 		case 5://快速排序（递归版）
 			start5 = clock();
@@ -172,6 +175,7 @@ end:
 			cout << endl;
 			diff5 = clock() - start5;
 			cout << "排序所用的时间为：" << diff5 << " ms" << endl;
+			key[5] = 5;
 			break;
 		case 6://快速排序（非递归版）
 			start6 = clock();
@@ -219,6 +223,7 @@ end:
 			cout << endl;
 			diff6 = clock() - start6;
 			cout << "排序所用的时间为：" << diff6 << " ms" << endl;
+			key[6] = 6;
 			break;
 		case 7://快速排序（枢轴存放）
 			start7 = clock();
@@ -229,6 +234,7 @@ end:
 			cout << endl;
 			diff7 = clock() - start7;
 			cout << "排序所用的时间为：" << diff7 << " ms" << endl;
+			key[7] = 7;
 			break;
 		case 8://计数排序
 			start8 = clock();
@@ -239,6 +245,7 @@ end:
 			cout << endl;
 			diff8 = clock() - start8;
 			cout << "排序所用的时间为：" << diff8 << " ms" << endl;
+			key[8] = 8;
 			break;
 		case 9://基数计数排序
 			start9 = clock();
@@ -249,6 +256,7 @@ end:
 			cout << endl;
 			diff9 = clock() - start9;
 			cout << "排序所用的时间为：" << diff9 << " ms" << endl;
+			key[9] = 9;
 			break;
 		case 10://颜色排序
 			start10 = clock();
@@ -259,6 +267,7 @@ end:
 			cout << endl;
 			diff10 = clock() - start10;
 			cout << "排序所用的时间为：" << diff10 << " ms" << endl;
+			key[10] = 10;
 			break;
 		case 11://在一个无序序列中找到第K大/小的数
 			start11 = clock();
@@ -268,6 +277,36 @@ end:
 			cout << "您要找的第K小的数是：" << a[k-1] << endl;
 			diff11 = clock() - start11;
 			cout << "排序所用的时间为：" << diff11 << " ms" << endl;
+			key[11] = 11;
+			break;
+		case 12://显示各个序列的时间（用户使用过的）
+			if (key[2] == 2) {
+				cout << "插入排序算法所用的时间为：" << diff2 << " ms" << endl;
+			}
+			if (key[4] == 4) {
+				cout << "归并排序所用的时间为：" << diff4 << " ms" << endl;
+			}
+			if (key[5] == 5) {
+				cout << "快速排序（递归版）所用的时间为：" << diff5 << " ms" << endl;
+			}
+			if (key[6] == 6) {
+				cout << "快速排序（非递归版）所用的时间为：" << diff6 << " ms" << endl;
+			}
+			if (key[7] == 7) {
+				cout << "快速排序（枢轴存放）所用的时间为：" << diff7 << " ms" << endl;
+			}
+			if (key[8] == 8) {
+				cout << "计数排序所用的时间为：" << diff8 << " ms" << endl;
+			}
+			if (key[9] == 9) {
+				cout << "基数计数排序所用的时间为：" << diff9 << " ms" << endl;
+			}
+			if (key[10] == 10) {
+				cout << "颜色排序所用的时间为：" << diff10 << " ms" << endl;
+			}
+			if (key[11] == 11) {
+				cout << "在一个无序序列中找到第K大/小的数所用的时间为：" << diff11 << " ms" << endl;
+			}
 			break;
 		default:
 			cout << "输入错误" << endl;
